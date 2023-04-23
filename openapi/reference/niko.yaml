@@ -1,0 +1,108 @@
+openapi: 3.1.0
+x-stoplight:
+  id: 86rfvdj4j5ob6
+info:
+  title: niko
+  version: '1.0'
+  description: niko
+  contact:
+    name: yuuu
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  '/nikos/{nikoId}':
+    parameters:
+      - schema:
+          type: string
+        name: nikoId
+        in: path
+        required: true
+    get:
+      summary: showNikos
+      responses:
+        '200':
+          description: User Found
+          content:
+            application/json:
+              schema:
+                $ref: ../models/niko.yaml
+        '404':
+          description: User Not Found
+      operationId: show-nikos
+      description: show nikos
+      tags:
+        - nikos
+    patch:
+      summary: updateNikos
+      operationId: update-nikos
+      responses:
+        '200':
+          description: User Updated
+          content:
+            application/json:
+              schema:
+                $ref: ../models/niko.yaml
+        '404':
+          description: User Not Found
+        '409':
+          description: Email Already Taken
+      description: update nikos
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/niko.yaml
+        description: Patch user properties to update.
+      tags:
+        - nikos
+  /nikos:
+    post:
+      summary: createNikos
+      operationId: create-nikos
+      responses:
+        '200':
+          description: User Created
+          content:
+            application/json:
+              schema:
+                $ref: ../models/niko.yaml
+        '400':
+          description: Missing Required Information
+        '409':
+          description: Email Already Taken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ../models/niko.yaml
+        description: Post the necessary fields for the API to create a new user.
+      description: create nikos
+      tags:
+        - nikos
+    parameters: []
+    get:
+      summary: indexNikos
+      operationId: index-nikos
+      responses:
+        '200':
+          description: OK
+      tags:
+        - nikos
+      description: index nikos
+components:
+  schemas: {}
+  securitySchemes:
+    uid:
+      name: uid
+      type: apiKey
+      in: header
+    client:
+      name: client
+      type: apiKey
+      in: header
+    access-token:
+      name: access-token
+      type: apiKey
+      in: header
+tags:
+  - name: nikos

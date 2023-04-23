@@ -1,0 +1,24 @@
+title: Niko
+x-stoplight:
+  id: 045lfpjruubl1
+type: object
+properties:
+  id:
+    type: integer
+  mood:
+    type: string
+  date:
+    type: string
+  comment:
+    type: string
+  createdAt:
+    type: string
+  updatedAt:
+    type: string
+  user_id:
+    type: number
+required:
+  - mood
+  - date
+x-tags:
+  - nikos
