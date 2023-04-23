@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ユーザー登録
 
-Things you may want to cover:
+```sh
+curl localhost:3000/api/v1/auth -X POST -d '{"email":"test@example.com", "password":"password", "password_confirmation": "password"}' -H "content-type:application/json" -i
+```
 
-* Ruby version
+## ログイン
 
-* System dependencies
+```sh
+curl localhost:3000/api/v1/auth/sign_in -X POST -d '{"email":"test@example.com", "password":"password"}' -H "content-type:application/json" -i
+```
 
-* Configuration
+## 気分一覧
 
-* Database creation
+```sh
+curl localhost:3000/api/v1/nikos -H "content-type:application/json" -i
+```
 
-* Database initialization
+## 気分登録
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh
+curl localhost:3000/api/v1/nikos -X POST -d '{"mood": "good", "date": "2023-04-23", "comment": "hello world."}' -H "content-type:application/json" -H "uid:test@example.com" -H "client:$CLIENT" -H  "access-token:$TOKEN" -i
+```
