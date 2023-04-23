@@ -9,7 +9,7 @@ RSpec.describe 'Api::V1::Nikos' do
 
     it 'index nikos' do
       get(api_v1_nikos_path(format: :json), headers:)
-      expect(response).to have_http_status(:ok)
+      assert_response_schema_confirm(200)
     end
   end
 end

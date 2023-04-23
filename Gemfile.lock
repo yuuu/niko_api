@@ -71,6 +71,15 @@ GEM
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    committee (5.0.0)
+      json_schema (~> 0.14, >= 0.14.3)
+      openapi_parser (~> 1.0)
+      rack (>= 1.5)
+    committee-rails (0.7.0)
+      actionpack
+      activesupport
+      committee (>= 5.0.0)
+      railties
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -111,6 +120,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.3)
+    json_schema (0.21.0)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -137,6 +147,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.14.3-arm64-darwin)
       racc (~> 1.4)
+    openapi_parser (1.0.0)
     orm_adapter (0.5.0)
     parallel (1.23.0)
     parser (3.2.2.0)
@@ -245,6 +256,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
+  committee-rails
   debug
   devise
   devise-i18n
