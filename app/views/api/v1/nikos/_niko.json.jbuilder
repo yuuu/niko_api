@@ -2,4 +2,4 @@
 
 json.extract! niko, :id, :user_id, :mood, :date, :comment
 json.createdAt niko.created_at
-json.updatedAt niko.updated_at
+json.dummy niko.updated_at
