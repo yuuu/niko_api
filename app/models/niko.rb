@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Niko < ApplicationRecord
   belongs_to :user
 

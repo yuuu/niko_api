@@ -1,7 +1,15 @@
 require:
-  - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
 
 AllCops:
   NewCops: enable
+
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+
+Style/Documentation:
+  Enabled: false
